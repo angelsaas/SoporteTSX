@@ -1,0 +1,60 @@
+.supportContainer {
+    font-family: sans-serif; /* Ejemplo de fuente */
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .searchInput {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .totalTickets {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .ticketTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .ticketTable th, .ticketTable td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+  
+  .ticketTable th {
+    background-color: #f0f0f0;
+  }
+  
+  .status {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  .status-enrevision {
+    background-color: #ffe0b2; /* Naranja claro */
+    color: #ff9800; /* Naranja */
+  }
+  
+  .status-resuelto {
+    background-color: #c8e6c9; /* Verde claro */
+    color: #4caf50; /* Verde */
+  }
+  
+  /* ... estilos para otros estados */
+  
+  .chatSection {
+    /* Estilos para la sección de chat */
+  }
+  
