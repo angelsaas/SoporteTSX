@@ -1,9 +1,8 @@
-"use client";
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-export default function AddTicketPage() {
+function addTicket() {
   return (
     <div className="container mt-4">
       <h2>Nuevo Ticket</h2>
@@ -25,3 +24,5 @@ export default function AddTicketPage() {
     </div>
   );
 }
+
+export default addTicket;
