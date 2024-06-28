@@ -1,5 +1,4 @@
 import React from 'react';
-
 interface StatusBadgeProps {
   status: 'En revisión' | 'Resuelto' | 'Pendiente';
 }

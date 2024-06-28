@@ -23,6 +23,7 @@ export default function Page() {
       ],
     },
     {
+      
       id: 3013,
       description: 'Problema con el inventario',
       status: 'Resuelto',
