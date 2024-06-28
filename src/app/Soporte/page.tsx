@@ -1,7 +1,6 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
-import { BiFolder } from 'react-icons/bi'; 
-
+import { BiFolder } from 'react-icons/bi';
 
 interface Comment {
   user: string;
@@ -29,6 +28,7 @@ export default function Page() {
   const [expandedTicketId, setExpandedTicketId] = useState<number | null>(null);
   const [expandedEvidenceId, setExpandedEvidenceId] = useState<number | null>(null);
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const [newComment, setNewComment] = useState<string>('');
 
   const handleTicketClick = (id: number) => {
     setExpandedTicketId(expandedTicketId === id ? null : id);
@@ -42,6 +42,15 @@ export default function Page() {
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
+  };
+
+  const handleCommentChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setNewComment(event.target.value);
+  };
+
+  const handleCommentSubmit = (ticketId: number) => {
+    console.log(`Nuevo comentario para el ticket ${ticketId}: ${newComment}`);
+    setNewComment('');
   };
 
   const tickets: Ticket[] = [
@@ -116,12 +125,13 @@ export default function Page() {
         <table className="min-w-full bg-white border border-gray-200">
           <thead>
             <tr>
-              <th className="py-2 px-4 border-b">Ticket ID</th>
-              <th className="py-2 px-4 border-b">Descripción</th>
-              <th className="py-2 px-4 border-b">Status</th>
-              <th className="py-2 px-4 border-b">Evidencia</th>
-              <th className="py-2 px-4 border-b">Última actualización</th>
-              <th className="py-2 px-4 border-b">Fecha de creación</th>
+              <th className="py-2 px-4 border-a">Ticket ID</th>
+              <th className="py-2 px-4 border-a">Descripción</th>
+              <th className="py-2 px-4 border-a">Status</th>
+              <th className="py-2 px-4 border-a">Evidencia</th>
+              <th className="py-2 px-4 border-a">Última actualización</th>
+              <th className="py-2 px-4 border-a">Fecha de creación</th>
+              
             </tr>
           </thead>
           <tbody>
@@ -153,6 +163,18 @@ export default function Page() {
                             <span className="text-gray-500">{comment.date}</span>
                           </div>
                         ))}
+                        <textarea
+                          className="w-full p-2 mt-2 border border-gray-300 rounded"
+                          placeholder="Escribe un comentario..."
+                          value={newComment}
+                          onChange={handleCommentChange}
+                        />
+                        <button
+                          className="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+                          onClick={() => handleCommentSubmit(ticket.id)}
+                        >
+                          Enviar
+                        </button>
                       </div>
                     </td>
                   </tr>
