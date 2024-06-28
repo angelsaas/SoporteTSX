@@ -13,6 +13,8 @@ interface TicketRowProps {
   onCommentSubmit: (ticketId: number) => void;
 }
 
+
+
 const TicketRow: React.FC<TicketRowProps> = ({
   ticket,
   onTicketClick,
