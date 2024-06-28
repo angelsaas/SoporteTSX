@@ -40,6 +40,7 @@ const TicketRow: React.FC<TicketRowProps> = ({
         <td className="py-2 px-4 border-b">{ticket.lastUpdate}</td>
         <td className="py-2 px-4 border-b">{ticket.creationDate}</td>
       </tr>
+      
       {isExpanded && (
         <tr>
           <td colSpan={6} className="py-2 px-4 bg-gray-50">
