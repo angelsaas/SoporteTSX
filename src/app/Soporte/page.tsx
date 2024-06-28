@@ -60,7 +60,7 @@ export default function Page() {
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold">Soporte</h2>
           <a
-            href="/addTicket"
+            href="../pages/addTicket"
             className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
           >
             Nuevo ticket
